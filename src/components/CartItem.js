@@ -1,15 +1,16 @@
 import { useContext, useState } from "react";
 import { Context } from "../AppContext";
 import {PropTypes} from 'prop-types';
+import useHover from "../hooks/useHover";
+
 
 function CartItem({item}){
     const {removeFromCart} = useContext(Context);
-    const [isHovered, setIsHovered] = useState(false)
+    const [isHovered, hoverElementRef] = useHover();
     return(
         <div className="cart-item">
             <i 
-                onMouseEnter={() => setIsHovered(true)} 
-                onMouseLeave={() => setIsHovered(false)} 
+                ref={hoverElementRef}
                 onClick={() => removeFromCart(item.id)} 
                 className={`ri-delete-bin-${isHovered ? 'fill' : 'line'}`}>
             </i>
