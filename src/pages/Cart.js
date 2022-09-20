@@ -1,10 +1,20 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { Context } from "../AppContext"
 import CartItem from "../components/CartItem";
 
 function Cart() {
-    const {cartItems} = useContext(Context);
+    const [buttonText, setButtonText] = useState("Place Order");
+    const {cartItems, emptyCart} = useContext(Context);
     const total = (5.99 * cartItems.length).toLocaleString("en-US", {style: "currency", currency: "USD"})
+
+    function placeOrder() {
+        setButtonText("Ordering...");
+        setTimeout(() =>{
+            console.log('Order placed!')
+            setButtonText("Place Order");
+            emptyCart();
+        }, 3000)
+    }
     return (
         <>
             <main className="cart-page">
@@ -14,7 +24,7 @@ function Cart() {
                 ))}
                 <p className="total-cost">Total: {total}</p>
                 <div className="order-button">
-                    <button>Place Order</button>
+                    <button onClick={placeOrder}>{buttonText}</button>
                 </div>
             </main>
         </>
