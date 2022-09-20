@@ -15,7 +15,6 @@ function useHover(){
         hoverElementRef.current.addEventListener('mouseenter', enter);
         hoverElementRef.current.addEventListener('mouseleave', leave);
         return () => {
-            console.log(hoverElementRef)
             hoverElementRef.current?.removeEventListener('mouseenter', enter);
             hoverElementRef.current?.removeEventListener('mouseleave', leave);
         }
