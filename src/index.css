@@ -135,3 +135,9 @@ a {
 a:visited { color: var(--light-blue); }
 a:hover { color: var(--light-blue); }
 a:active { color: var(--light-blue); }
+
+@media screen and (min-width: 1023px){
+    .image-container .hide{
+        display: none;
+    }
+}
