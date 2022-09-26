@@ -1,4 +1,4 @@
-# Typing Game ⌨
+# Pic Some 🛒
 
 <p align="center">
 <img src="https://img.shields.io/badge/STATUS-COMPLETED-success"/>
