@@ -12,11 +12,12 @@ function useHover(){
     }
 
     useEffect(() => {
-        hoverElementRef.current.addEventListener('mouseenter', enter);
-        hoverElementRef.current.addEventListener('mouseleave', leave);
+        const hoverElement = hoverElementRef.current
+        hoverElement.addEventListener('mouseenter', enter);
+        hoverElement.addEventListener('mouseleave', leave);
         return () => {
-            hoverElementRef.current?.removeEventListener('mouseenter', enter);
-            hoverElementRef.current?.removeEventListener('mouseleave', leave);
+            hoverElement?.removeEventListener('mouseenter', enter);
+            hoverElement?.removeEventListener('mouseleave', leave);
         }
     }, [])
 

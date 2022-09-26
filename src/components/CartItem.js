@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Context } from "../AppContext";
 import {PropTypes} from 'prop-types';
 import useHover from "../hooks/useHover";
@@ -14,7 +14,7 @@ function CartItem({item}){
                 onClick={() => removeFromCart(item.id)} 
                 className={`ri-delete-bin-${isHovered ? 'fill' : 'line'}`}>
             </i>
-            <img src={item.url} width="130px" />
+            <img src={item.url} width="130px" alt=""/>
             <p>$5.99</p>
         </div>
     )
