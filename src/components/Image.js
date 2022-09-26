@@ -7,7 +7,7 @@ function Image({className, image}){
     const [isHovered, hoverElementRef] = useHover();
     const {toggleFavorite, addToCart, removeFromCart, cartItems} = useContext(Context);
     const isOnCart = cartItems.some((item) => item.id === image.id)
-    
+
     const [hideFavorite, setHideFavorite] = useState('hide');
     const [hideCart, setHideCart] = useState('hide');
 
@@ -19,7 +19,7 @@ function Image({className, image}){
             className={`${className} image-container`}
             ref={hoverElementRef}
         >
-            <img src={image.url} className="image-grid"/>
+            <img src={image.url} className="image-grid" alt=""/>
                 <i 
                 onClick={() => toggleFavorite(image.id)} 
                 className={`${image.isFavorite ? "ri-heart-fill" : "ri-heart-line"} ${hideFavorite} favorite`}
